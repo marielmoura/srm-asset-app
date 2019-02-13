@@ -3,12 +3,14 @@ import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Customer } from './customer';
+import { environment } from 'src/environments/environment';
+
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-const apiUrl = "http://localhost:8080/api/srmasset";
+const apiUrl = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
